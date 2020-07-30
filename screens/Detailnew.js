@@ -7,32 +7,44 @@ export default class Detailnew extends React.Component {
     super(props);
 
     this.state = {
-      OwnerName: this.props.navigation.getParam('OwnerName',),
-      ImageURL: this.props.navigation.getParam('ImageURL'),
-      ComplaintDetail: this.props.navigation.getParam('ComplaintDetail')
+      // OwnerName: this.props.navigation.getParam('OwnerName',),
+      // ImageURL: this.props.navigation.getParam('ImageURL'),
+      // ComplaintDetail: this.props.navigation.getParam('ComplaintDetail')
+      newsID: this.props.navigation.getParam('newsID'),
+      newsDetail: this.props.navigation.getParam('newsDetail'),
+      newsImage: this.props.navigation.getParam('newsImage'),
+      newsName: this.props.navigation.getParam('newsName'),
       
     };
     console.log("OwnerName: " + this.props.navigation.getParam('OwnerName'));
   }
   static navigationOptions = {
-    title: 'Detail',
+    
+    headerTitle: <Text style={{ textAlign: 'center', flex: 1, fontFamily: 
+      "Prompt-Regular",fontSize:20,color:'white'}}>ข้อมูลข่าวสาร</Text>,
+    headerStyle: {
+
+
+      backgroundColor: '#6633cc',
+    },
+    
   };
 
   render() {
     const { cardStyle, avatarStyle, titleSubtitleSytle, imageItem, textClick } = style;
     return (
       <View>
-        <ImageBackground source={require("../image/bg.png")} resizeMode="stretch" style={{ width: "100%", height: "100%" }}>
+        <ImageBackground source={require("../image/violetbg2.png")} resizeMode="stretch" style={{ width: "100%", height: "100%" }}>
           <View style={{ flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-            <Image source={{ uri: this.state.ImageURL }} style={{ width: "90%", height: 180, margin: 20 }}></Image>
+            <Image source={{ uri: this.state.newsImage }} style={{ width: "90%", height: 180, margin: 20 }}></Image>
             {/* <ZoomImage source={{ uri: this.state.ImageURL }} style={{ width: "90%", height: 180, margin: 20 }}
               duration={200}
               enableScaling={false}
               easingFunc={Easing.ease}>
             </ZoomImage> */}
-            <View style={{ backgroundColor: "white" ,margin:20}}>
-              <Text style={{ color: "#000000EE", fontrrFamily: "Prompt-Regular" }}>{this.state.OwnerName}</Text>
-              <Text style={{ color: "#000000AA", marginBottom: 10, fontFamily: "Prompt-Regular" }}>{this.state.ComplaintDetail}</Text>
+            <View style={{ backgroundColor: "white" ,margin:10}}>
+              <Text style={{ color: "#000000EE", fontrrFamily: "Prompt-Regular" }}>{this.state.newsName}</Text>
+              <Text style={{ color: "#000000AA", marginBottom: 10, fontFamily: "Prompt-Regular" }}>{this.state.newsDetail}</Text>
             </View>
           </View>
           {/* <View style={{ flexDirection: "column", margin: 5 }}>
@@ -42,8 +54,7 @@ export default class Detailnew extends React.Component {
               </View>
             </View> */}
           {/* <Text>{this.state.id} </Text> */}
-          <Button title="Delete Record" onPress={() => Alert.alert(this.state.OwnerName)}></Button>
-          {/* <Button title="Back" onPress={()=> {this.props.navigation.navigate('Screen2')}}></Button> */}
+         
         </ImageBackground>
       </View>
     );

@@ -31,15 +31,25 @@ target 'rn_Dsme' do
 
   pod 'RNImageCropPicker', :path => '../node_modules/react-native-image-crop-picker'
 
+
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+  pod 'RCTRestart', :path => '../node_modules/react-native-restart/ios'
+ 
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
 
   target 'rn_DsmeTests' do
     inherit! :search_paths
     # Pods for testing
   end
-
+# React Native Maps dependencies
+rn_maps_path = '../node_modules/react-native-maps'
+pod 'react-native-google-maps', :path => rn_maps_path
+pod 'GoogleMaps'
+pod 'Google-Maps-iOS-Utils'
   use_native_modules!
 end
+
 
 target 'rn_Dsme-tvOS' do
   # Pods for rn_Dsme-tvOS
@@ -48,5 +58,7 @@ target 'rn_Dsme-tvOS' do
     inherit! :search_paths
     # Pods for testing
   end
+
+ 
 
 end

@@ -8,95 +8,177 @@ import {
     FlatList,
     Image,
     StyleSheet,
-    TouchableHighlight
+    TouchableHighlight,
+    Alert,
+    RefreshControl,
+    TouchableOpacity,
+
+
+
 } from 'react-native';
 import axios from 'axios';
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
+// import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { ScrollView } from 'react-native-gesture-handler';
+import Modal from "react-native-modal";
+import LinearGradient from 'react-native-linear-gradient';
+
+
+
 
 class Listcomplain extends Component {
     constructor(props) {
         super(props);
         this.state = {
             Id: this.props.navigation.getParam('Id'),
-            Complaint: [],
+            Complaint: null,
+            loading: true
+
         };
+
     }
-    static navigationOptions = {
-        title: 'เรื่องร้องเรียน',
+
+    /* -------------------------------------------------------------------------- */
+
+    static navigationOptions = ({ navigation }) => {
+        return {
+            headerLeft: <View style={{ marginLeft: 10 }}><Text onPress={() => navigation.goBack()}>{<Icon name="ios-arrow-round-back" color={'white'} size={40} />}</Text></View>,
+            headerTitle: <View>
+                <Text style={{ fontFamily: 'Prompt-Regular', color: '#FFF', fontSize: 20 }}>
+                    {'รายการร้องทุกข์'}
+                </Text>
+            </View>,
+
+            headerStyle: {
+                backgroundColor: '#6633cc',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+            },
+        };
+
     };
+    /* -------------------------------------------------------------------------- */
+
+
     componentDidMount() {
+        //alert(this.state.Id)
         this.get();
+
     }
+
     get() {
-        const url = "http://services.totiti.net/DSME1953Wcf/Service1.svc/";
+        const url = "http://203.113.14.18/DCPTCWcfService/Service1.svc/";
         // console.log("url: " + url+"GetTicketOrderByCompliantCate/"+this.state.Id);
-        axios.get(url + "GetTicketOrderByCompliantCate/" + this.state.Id)
+        axios.get(url + "GetComplaintByComplaintCategoryId/" + this.state.Id)
             .then(response => {
-                this.setState({ Complaint: response.data.GetTicketOrderByCompliantCateResult })
+                this.setState({ Complaint: response.data.GetComplaintByComplaintCategoryIdResult, loading: false })
+                //Alert.alert(JSON.stringify(response.data.GetComplaintByComplaintCategoryIdResult))
+                console.log(response.data.GetComplaintByComplaintCategoryIdResult)
             })
             .catch(err => {
                 alert(JSON.stringify(error));
             })
     }
     renderItem(item) {
-        const { cardStyle, avatarStyle, titleSubtitleSytle, imageItem, textClick } = style;
-        let ColorStatus
-        if (item.Status == "1") {
-            ColorStatus = "red"
-        } else if (item.Status == "2") {
-            ColorStatus = "green"
-        }
+        const { cardStyle, avatarStyle, titleSubtitleSytle, imageItem, textClick, Button } = style;
+
         return (
-            <TouchableHighlight style={{margin:10}} onPress={() => {
+            <TouchableHighlight underlayColor={false} style={{ margin: 10 }} onPress={() => {
                 this.props.navigation.navigate('Detailcomplain',
                     {
                         Id: item.Id,
-                        ImageURL: item.ImageURL,
-                        Segment: item.Segment,
-                        Value: item.Value,
-                        OwnerName: item.OwnerName,
-                        Com_Name: item.Com_Name,
-                        ComplaintDetail: item.ComplaintDetail,
-                        CreatedDateString: item.CreatedDateString,
+                        Topic: item.Topic,
+                        ImageURLProfile: item.ImageURLProfile,
+                        Detail: item.Detail,
+                        CommunityName: item.CommunityName,
+                        Latitude: item.Latitude,
+                        Longitude: item.Longitude,
+                        UMCreate: item.UMCreate,
+                        Status: item.Status
                     });
                 console.log("Id: " + item.Id);
+                console.log("Topic: " + item.Topic);
+                console.log("ImageURLProfile: " + item.ImageURLProfile);
+                console.log("Detail: " + item.Detail);
+                console.log("Latitude: " + item.Latitude);
+                console.log("Longitude: " + item.Longitude);
+                console.log("CommunityName: " + item.CommunityName);
+                console.log("UMCreate: " + item.UMCreate);
+
             }}>
                 <View style={cardStyle}>
-                    <Image source={{ uri: item.ImageURL }} style={imageItem}></Image>
-                    <View style={{ flexDirection: "row", width: "75%", margin: 5 }}>
+                    <Image source={{ uri: 'http://' + item.ImageURLProfile }} style={imageItem}></Image>
+                    <View style={{ flexGrow: 1, flexDirection: "row" }}>
                         <View style={titleSubtitleSytle}>
-                            <Text style={{ color: "#000000EE", fontrrFamily: "Prompt-Regular", fontSize: 18 }}>{item.ComplaintDetail}</Text>
-                            <Text style={{ color: "#7F8C8D", fontrrFamily: "Prompt-Regular", fontSize: 16 }}>{item.Com_Name}</Text>
-                            <Text style={{ color: "#7F8C8D", fontrrFamily: "Prompt-Regular", fontSize: 16 }}>{item.CreatedDateString}</Text>
+                            <Text style={{ fontSize:16, }}>{item.Topic}</Text>
+
                         </View>
                     </View>
-                    <View style={{ flexDirection: "row", alignItems: "center" }}>
-                        <Icon name="circle" color={ColorStatus} ></Icon>
-                    </View>
+                    {/* <View style={{ flexDirection: "row", alignItems: "center" }}>
+
+                    </View> */}
                 </View>
             </TouchableHighlight >
+
         );
     }
+
+    _test = () => {
+        this.setState({ loading: true })
+        this.get()
+    }
     render() {
+
+
         return (
-            this.state.Complaint.length != 0 ?
-                <View>
-                    <ImageBackground source={require("../image/bg.png")} resizeMode="stretch" style={{ width: "100%", height: "100%", justifyContent: "flex-start", alignItems: "center" }}>
-                        <Button title="เพิ่มเรื่องร้องเรียน" onPress={() => { this.props.navigation.navigate('Addcomplaint', { Id: this.state.Id }) }}></Button>
-                        <FlatList data={this.state.Complaint}
-                            renderItem={({ item }) => this.renderItem(item)}>
-                        </FlatList>
-                    </ImageBackground>
-                </View> :
-                <View>
-                    <ImageBackground source={require("../image/bg.png")} resizeMode="stretch" style={{ width: "100%", height: "100%", justifyContent: "flex-start", alignItems: "center" }}>
-                        <Text style={{ color: "white", marginTop: 20 }}>ไม่มีข้อมูล</Text>
-                        <Button title="เพิ่มเรื่องร้องเรียน" onPress={() => { this.props.navigation.navigate('Addcomplaint', { Id: this.state.Id }) }}></Button>
-                    </ImageBackground>
-                </View>
+            this.state.Complaint == null ? 
+            <View>
+
+            </View> :
+            
+                <ImageBackground source={require("../image/violetbg2.png")} resizeMode="stretch" style={{ width: "100%", height: "100%", justifyContent: "flex-start", alignItems: "center" }}>
+                    <ScrollView
+                        refreshControl={
+                            <RefreshControl refreshing={this.state.loading} onRefresh={this._test} />
+                        }
+                        style={{ flex: 1, width: "100%" }} >
+                        <FlatList data={this.state.Complaint} renderItem={({ item }) => this.renderItem(item)} />
+
+                    </ScrollView>
+
+
+
+                    <TouchableOpacity style={{marginVertical:20}} onPress={() => { this.props.navigation.navigate('Addcomplaint', { Id: this.state.Id }) }} >
+                    <LinearGradient  colors={['#6633cc', '#8C53F0',]} style={style.linearGradient}>
+                        <Text style={style.BtnText}>
+                            เพิ่มเรื่องร้องทุกข์
+                           </Text>
+                           </LinearGradient>
+                    </TouchableOpacity>
+
+
+                </ImageBackground>
+
+
         );
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const style = StyleSheet.create(
     {
         cardStyle: {
@@ -112,11 +194,12 @@ const style = StyleSheet.create(
             shadowColor: "#000",
             shadowOffset: {
                 width: 0,
-                height: 5,
-            }, shadowOpacity: 0.34,
-            shadowRadius: 6.27,
+                height: 6,
+            },
+            shadowOpacity: 0.39,
+            shadowRadius: 8.30,
 
-            elevation: 10,
+            elevation: 13,
         },
         avatarStyle: {
             width: 45,
@@ -126,15 +209,17 @@ const style = StyleSheet.create(
         titleSubtitleSytle: {
             flexDirection: "column",
             marginLeft: 16,
-            marginRight: 16,
+            width: "81%",
+            // height:"100%"
+            //marginRight: 16,
         },
         imageItem: {
-            width: 50,
-            height: 50,
+            width: 65,
+            height: 65,
             resizeMode: 'stretch',
-            marginLeft: 5,
-            borderTopLeftRadius: 10,
-            borderTopRightRadius: 10,
+            marginLeft: 10,
+            //borderTopLeftRadius: 10,
+            //borderTopRightRadius: 10,
             shadowOffset: {
                 width: 2,
                 height: 2,
@@ -156,6 +241,39 @@ const style = StyleSheet.create(
             paddingLeft: 20,
             marginBottom: 10,
             fontFamily: "Prompt-Bold"
-        }
+        },
+        BtnAddcompain: {
+            padding: 100,
+            width: 200,
+            borderRadius: 24,
+            alignItems: 'center',
+            color: 'white',
+        },
+
+        Btn: {
+            //alignSelf:'stretch',
+            alignItems: 'center',
+            padding: 10,
+            backgroundColor: "#6633cc",
+            borderRadius: 10,
+            marginVertical: 20,
+
+        },
+
+        BtnText: {
+            color: '#fff',
+            fontFamily: 'Prompt-Regular',
+            fontSize: 20,
+        },
+        linearGradient: {
+            marginBottom: 10,
+            width: 300,
+            height: 50,
+            alignSelf: "center",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius:5,
+        },
+
     })
 export default Listcomplain;

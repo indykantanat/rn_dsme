@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "rn_Dsme.app"
-               BlueprintName = "rn_Dsme"
+               BuildableName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;.app"
+               BlueprintName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;"
                ReferencedContainer = "container:rn_Dsme.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "rn_DsmeTests.xctest"
-               BlueprintName = "rn_DsmeTests"
+               BuildableName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;Tests.xctest"
+               BlueprintName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;Tests"
                ReferencedContainer = "container:rn_Dsme.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -55,29 +55,27 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+            BuildableName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;.app"
+            BlueprintName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;"
+            ReferencedContainer = "container:rn_Dsme.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "rn_DsmeTests.xctest"
-               BlueprintName = "rn_DsmeTests"
+               BuildableName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;Tests.xctest"
+               BlueprintName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;Tests"
                ReferencedContainer = "container:rn_Dsme.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rn_Dsme.app"
-            BlueprintName = "rn_Dsme"
-            ReferencedContainer = "container:rn_Dsme.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -94,13 +92,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rn_Dsme.app"
-            BlueprintName = "rn_Dsme"
+            BuildableName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;.app"
+            BlueprintName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;"
             ReferencedContainer = "container:rn_Dsme.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -113,8 +109,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "rn_Dsme.app"
-            BlueprintName = "rn_Dsme"
+            BuildableName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;.app"
+            BlueprintName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;"
             ReferencedContainer = "container:rn_Dsme.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

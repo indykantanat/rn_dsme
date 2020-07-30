@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "rn_Dsme-tvOS.app"
-               BlueprintName = "rn_Dsme-tvOS"
+               BuildableName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;-tvOS.app"
+               BlueprintName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;-tvOS"
                ReferencedContainer = "container:rn_Dsme.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "rn_Dsme-tvOSTests.xctest"
-               BlueprintName = "rn_Dsme-tvOSTests"
+               BuildableName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;-tvOSTests.xctest"
+               BlueprintName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;-tvOSTests"
                ReferencedContainer = "container:rn_Dsme.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -55,29 +55,27 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
+            BuildableName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;-tvOS.app"
+            BlueprintName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;-tvOS"
+            ReferencedContainer = "container:rn_Dsme.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "rn_Dsme-tvOSTests.xctest"
-               BlueprintName = "rn_Dsme-tvOSTests"
+               BuildableName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;-tvOSTests.xctest"
+               BlueprintName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;-tvOSTests"
                ReferencedContainer = "container:rn_Dsme.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "rn_Dsme-tvOS.app"
-            BlueprintName = "rn_Dsme-tvOS"
-            ReferencedContainer = "container:rn_Dsme.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -94,13 +92,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "rn_Dsme-tvOS.app"
-            BlueprintName = "rn_Dsme-tvOS"
+            BuildableName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;-tvOS.app"
+            BlueprintName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;-tvOS"
             ReferencedContainer = "container:rn_Dsme.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -113,8 +109,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "rn_Dsme-tvOS.app"
-            BlueprintName = "rn_Dsme-tvOS"
+            BuildableName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;-tvOS.app"
+            BlueprintName = "&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;-tvOS"
             ReferencedContainer = "container:rn_Dsme.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

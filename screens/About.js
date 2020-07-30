@@ -11,7 +11,7 @@ class About extends Component {
 
     render() {
         return (
-            <WebView source={{ uri: 'http://services.totiti.net/DSME1953/about.aspx' }} />
+            <WebView source={{ uri: 'http://services.totiti.net/DSMESanunrak/about.aspx' }} />
         );
     }
 }

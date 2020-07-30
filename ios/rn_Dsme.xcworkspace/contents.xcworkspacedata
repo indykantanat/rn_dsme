@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:rn_Dsme.xcodeproj">
+      location = "group:/Users/kantanat/Downloads/rn_Dsme/ios/&#xe17;&#xe21;.&#xe2a;&#xe19;&#xe31;&#xe48;&#xe19;&#xe23;&#xe31;&#xe01;&#xe29;&#xe4c;.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:rn_Dsme.xcodeproj">
    </FileRef>
 </Workspace>

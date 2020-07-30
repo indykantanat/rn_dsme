@@ -28,7 +28,7 @@ class Contact extends Component {
     render() {
         return (
             <WebView
-                source={{ uri: "http://services.totiti.net/DSME1953/Contact.aspx" }}
+                source={{ uri: "http://services.totiti.net/DSMESanunrak/Contact.aspx" }}
                 ref={this.WEBVIEW_REF}
                 onNavigationStateChange={this.onNavigationStateChange.bind(this)}
             />

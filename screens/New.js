@@ -30,10 +30,10 @@ export default class New extends React.Component {
     this.get();
   }
   get() {
-    const url = "http://services.totiti.net/DSME1883Wcf/Service1.svc/";
-    axios.get(url + "GetTicketOrderByCompliantCate/25")
+    const url = "http://203.113.14.18/DCPTCWcfService/Service1.svc";
+    axios.get(url + "GetNewCategoryByProjectId/1")
       .then(response => {
-        this.setState({ news: response.data.GetTicketOrderByCompliantCateResult })
+        this.setState({ news: response.data.GetNewCategoryByProjectIdResult })
         //Alert.alert(JSON.stringify(response.data.GetTicketOrderByCompliantCateResult))
       })
       .catch(err => {
@@ -41,7 +41,7 @@ export default class New extends React.Component {
       })
   }
   static navigationOptions = {
-    title: 'Detailnew',
+    title: 'kuy',
   };
   // gotoDetailnew = ({item}) => {
   //   const { navigation } = this.props
@@ -63,8 +63,8 @@ export default class New extends React.Component {
           <Image source={{ uri: item.ImageURL }} style={imageItem} PlaceholderContent={<ActivityIndicator />}></Image>
           <View style={{ flexDirection: "column", margin: 5 }}>
             <View style={titleSubtitleSytle}>
-              <Text style={{ color: "#000000EE", fontrrFamily: "Prompt-Regular" }}>{item.OwnerName}</Text>
-              <Text style={{ color: "#000000AA", marginBottom: 10, fontFamily: "Prompt-Regular" }}>{item.CreatedDateString}</Text>
+              <Text style={{ color: "#000000EE", fontrrFamily: "Prompt-Regular" }}>{item.Name}</Text>
+              {/* <Text style={{ color: "#000000AA", marginBottom: 10, fontFamily: "Prompt-Regular" }}>{item.CreatedDateString}</Text> */}
             </View>
           </View>
         </View>
@@ -75,14 +75,14 @@ export default class New extends React.Component {
     return (
       this.state.news.length != 0 ?
         <View>
-          <ImageBackground source={require("../image/bg.png")} resizeMode="stretch" style={{ width: "100%", height: "100%", justifyContent: "flex-start", alignItems: "center" }}>
+          <ImageBackground source={require("../image/violetbg2.png")} resizeMode="stretch" style={{ width: "100%", height: "100%", justifyContent: "flex-start", alignItems: "center" }}>
             <FlatList data={this.state.news}
               renderItem={({ item }) => this.renderItem(item)}>
             </FlatList>
           </ImageBackground>
         </View> :
         <View>
-          <ImageBackground source={require("../image/bg.png")} resizeMode="stretch" style={{ width: "100%", height: "100%", justifyContent: "flex-start", alignItems: "center" }}>
+          <ImageBackground source={require("../image/violetbg2.png")} resizeMode="stretch" style={{ width: "100%", height: "100%", justifyContent: "flex-start", alignItems: "center" }}>
             <Text style={{ color: "white", marginTop: 20 }}>ไม่มีข้อมูล</Text>
           </ImageBackground>
         </View>
@@ -146,5 +146,6 @@ const style = StyleSheet.create(
       paddingLeft: 20,
       marginBottom: 10,
       fontFamily: "Prompt-Bold"
-    }
+    },
+    
   })
